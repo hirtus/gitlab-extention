@@ -12,9 +12,6 @@ chrome.storage.sync.get('color', function(data) {
 });
 
 changeColor.onclick = function(element) {
-  console.log('Call popup changing color');
   let color = element.target.value;
-    // chrome.tabs.executeScript(
-    //     chrome.tabs[0].id,
-    //     {code: 'document.body.style.backgroundColor = "' + color + '";'});
+  console.log('Call popup changing color to ' + color);
 };

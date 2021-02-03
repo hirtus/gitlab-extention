@@ -2,7 +2,7 @@
   "name": "Gitlab Extention",
   "version": "1.0",
   "description": "Build an Extension!",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "permissions": ["declarativeContent", "storage"],
   "options_page": "views/options.html",
   "background": {
     "scripts": ["scripts/background.js"],
@@ -27,7 +27,7 @@
     "chrome_style": false
   },
   "page_action": {
-    "default_popup": "popup.html",
+    "default_popup": "views/popup.html",
     "default_icon": {
       "16": "images/icon-16x16.png",
       "32": "images/icon-32x32.png",
