@@ -1,0 +1,43 @@
+{
+  "name": "Gitlab Extention",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "options_page": "views/options.html",
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["https://gitlab.com/*/-/boards*"],
+      "js": ["scripts/boards.js"],
+      "all_frames": true
+    },
+    {
+      "run_at": "document_end",
+      "matches": ["https://gitlab.com/*/-/pipelines*"],
+      "js": ["scripts/pipelines.js"],
+      "all_frames": true
+    }
+  ],
+  "options_ui": {
+    "page": "views/options.html",
+    "chrome_style": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon-16x16.png",
+      "32": "images/icon-32x32.png",
+      "96": "images/icon-96x96.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon-16x16.png",
+    "32": "images/icon-32x32.png",
+    "96": "images/icon-96x96.png"
+  },
+  "manifest_version": 2
+}
