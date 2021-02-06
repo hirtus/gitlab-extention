@@ -1,4 +1,4 @@
-#  Chrome extention for gitlab
+#  Chrome extension for gitlab
 Available features:
   - Display issue weight
   - Display total weight on board
