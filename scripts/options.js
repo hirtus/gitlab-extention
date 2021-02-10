@@ -28,7 +28,7 @@ function restoreOptions() {
   }, function(items) {
     document.getElementById('url').value = items.url;
     document.getElementById('token').value = items.token;
-    document.getElementById('weight').value = items.token;
+    document.getElementById('weight').value = items.weight;
   });
 }
 
