@@ -1,5 +1,12 @@
+let maxWeight = 10;
+
+chrome.storage.sync.get({
+    weight: ''
+  }, function(items) {
+    maxWeight = items.weight;
+  });
+
 function getCardTitleInfo(title) {
-    const maxWeight = 100;
     let regex = /(?<title>.*)\[ *(?<weight>[0-9].*) *\](?<tail>.*)/;
     let match = title.match(regex);
     if (match){
