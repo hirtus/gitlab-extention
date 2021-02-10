@@ -1,13 +1,10 @@
 function getCardTitleInfo(title) {
-    const maxWeight = 20;
+    const maxWeight = 100;
     let regex = /(?<title>.*)\[ *(?<weight>[0-9].*) *\](?<tail>.*)/;
     let match = title.match(regex);
     if (match){
         let weight = parseInt(match.groups.weight);
-        if(weight > maxWeight){
-            return {title: title, weight: 0, tail: ''};
-        }
-        return {title: match.groups.title, weight: weight, tail: match.groups.tail};
+        return {title: match.groups.title, weight: weight > 100 ? 100 : weight, tail: match.groups.tail};
     }
         
     else
