@@ -4,9 +4,8 @@ function getCardTitleInfo(title) {
     let match = title.match(regex);
     if (match){
         let weight = parseInt(match.groups.weight);
-        return {title: match.groups.title, weight: weight > 100 ? 100 : weight, tail: match.groups.tail};
+        return {title: match.groups.title, weight: weight > maxWeight ? maxWeight : weight, tail: match.groups.tail};
     }
-        
     else
         return {title: title, weight: 0, tail: ''};
 }
