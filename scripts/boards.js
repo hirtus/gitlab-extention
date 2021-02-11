@@ -1,8 +1,19 @@
+let maxWeight;
+
+chrome.storage.sync.get({
+    weight: ''
+  }, function(items) {
+    maxWeight = items.weight;
+    if(maxWeight === '') maxWeight = 10; 
+  });
+
 function getCardTitleInfo(title) {
     let regex = /(?<title>.*)\[ *(?<weight>[0-9].*) *\](?<tail>.*)/;
     let match = title.match(regex);
-    if (match)
-        return {title: match.groups.title, weight: parseInt(match.groups.weight), tail: match.groups.tail};
+    if (match){
+        let weight = parseInt(match.groups.weight);
+        return {title: match.groups.title, weight: weight > maxWeight ? maxWeight : weight, tail: match.groups.tail};
+    }
     else
         return {title: title, weight: 0, tail: ''};
 }
