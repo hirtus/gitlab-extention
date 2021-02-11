@@ -39,5 +39,6 @@
     "32": "images/icon-32x32.png",
     "96": "images/icon-96x96.png"
   },
+
   "manifest_version": 2
 }
