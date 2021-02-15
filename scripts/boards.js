@@ -1,9 +1,10 @@
-let maxWeight = 10;
+let maxWeight;
 
 chrome.storage.sync.get({
     weight: ''
   }, function(items) {
     maxWeight = items.weight;
+    if(maxWeight === '') maxWeight = 10; 
   });
 
 function getCardTitleInfo(title) {
