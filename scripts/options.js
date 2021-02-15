@@ -23,19 +23,23 @@ constructOptions(kButtonColors);
 function restoreOptions() {
   chrome.storage.sync.get({
     url: '',
-    token: ''
+    token: '',
+    weight: ''
   }, function(items) {
     document.getElementById('url').value = items.url;
     document.getElementById('token').value = items.token;
+    document.getElementById('weight').value = items.weight;
   });
 }
 
 function saveOptions() {
   var url = document.getElementById('url').value;
   var token = document.getElementById('token').value;
+  var weight = document.getElementById('weight').value;
   chrome.storage.sync.set({
     url: url,
-    token: token
+    token: token,
+    weight: weight
   }, function() {
     var status = document.getElementById('status');
     status.textContent = 'Options saved.';
